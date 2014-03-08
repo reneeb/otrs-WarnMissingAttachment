@@ -1,0 +1,18 @@
+=head1 NAME
+
+WarnMissingAttachment
+
+=head1 DESCRIPTION
+
+It's not that unusual to type something like "Attached is a new version of the file", but then you forget to
+attach the file before sending the mail. This add on checks the email for some keywords like "attached", 
+"attachment", etc. before the mail is submitted.
+
+When those keywords are found but no attachments are uploaded, the user gets a warning.
+
+This add on affects AgentTicketPhone, AgentTicketEmail and AgentTicketCompose.
+
+=head1 AUTHOR
+
+Renee Baecker, C<info@perl-services.de>
+

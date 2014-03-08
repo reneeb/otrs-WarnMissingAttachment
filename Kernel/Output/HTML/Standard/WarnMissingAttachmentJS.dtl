@@ -1,0 +1,74 @@
+<!--dtl:js_on_document_complete-->
+<script type="text/javascript">//<![CDATA[
+"use strict";
+
+$(document).ready( function(){
+
+    $('button[id="submitRichText"]').bind( 'click', function(e) {
+
+        if ( check_body() && check_no_attachment() ) {
+
+            // warn user that no attachment is given and ask what to do
+            Core.UI.Dialog.ShowDialog({
+                "Modal"         : true,
+                "Title"         : "$JSText{"Sending without Attachment"}",
+                "HTML"          : "$JSText{"You probably forgot to attach something to that message. Send without an attachment?"}",
+                "PositionLeft"  : "Center",
+                "PositionTop"   : "100px",
+                "CloseOnEscape" : true,
+                "Buttons"       : [
+                    {
+                        "Label"    : "$JSText{"Send without an attachment"}",
+                        "Function" : function(){
+                            Core.UI.Dialog.CloseDialog( $('.Dialog:visible') );
+                            $('form[name="compose"]').submit();
+                            return true;
+                        }
+                    },
+                    {
+                        "Label"    : "$JSText{"I want to attach something"}",
+                        "Function" : function() {
+                            Core.UI.Dialog.CloseDialog( $('.Dialog:visible') );
+                            return false;
+                        }
+                    }
+                ]
+            });
+
+            return false;
+        }
+
+        return true;
+    });
+});
+
+var attachment_keywords = new Array (
+<!-- dtl:block:Keyword -->
+    "$QData{"Value"}",
+<!-- dtl:block:Keyword -->
+    ""
+);
+
+
+function check_body() {
+    var body_text = $('textarea[name="$QData{"Fieldname"}"]').val();
+    for ( var i = 0; i < attachment_keywords.length - 1; i++ ) {
+        var re = new RegExp("\\b" + attachment_keywords[i] + "\\b", "i");
+        if ( body_text.match(re) ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function check_no_attachment() {
+    if ( $('input[id="AttachmentDelete1"]').length ) {
+        return false;
+    }
+
+    return true;
+}
+
+//]]></script>
+<!--dtl:js_on_document_complete-->

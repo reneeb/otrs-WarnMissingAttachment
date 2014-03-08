@@ -1,0 +1,21 @@
+{
+    "name": "WarnMissingAttachment",
+    "version": "3.3.1",
+    "framework": [
+        "3.2.x",
+        "3.3.x"
+    ],
+    "vendor": {
+        "name":  "Perl-Services.de",
+        "url": "http://www.perl-services.de"
+    },
+    "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007",
+    "description" : {
+        "en": "Warn user when attachment keywords are mentioned but no attachment was added",
+        "de": "Warne den Benutzer wenn Schlüsselwörter für Anhänge genannt sind aber kein Anhang ausgewählt ist"
+    },
+    "code": [
+        { "type": "Install", "version": 0 },
+        { "type": "Upgrade", "version": 0 }
+    ]
+}
