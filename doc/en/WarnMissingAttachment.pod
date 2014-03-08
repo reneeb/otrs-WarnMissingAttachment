@@ -6,7 +6,7 @@ WarnMissingAttachment
 
 It's not that unusual to type something like "Attached is a new version of the file", but then you forget to
 attach the file before sending the mail. This add on checks the email for some keywords like "attached", 
-"attachment", etc. before the mail is submitted.
+"attachment", etc. before the message is submitted.
 
 When those keywords are found but no attachments are uploaded, the user gets a warning.
 

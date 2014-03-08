@@ -2,6 +2,8 @@
     "name": "WarnMissingAttachment",
     "version": "3.3.1",
     "framework": [
+        "3.0.x",
+        "3.1.x",
         "3.2.x",
         "3.3.x"
     ],
@@ -13,9 +15,5 @@
     "description" : {
         "en": "Warn user when attachment keywords are mentioned but no attachment was added",
         "de": "Warne den Benutzer wenn Schlüsselwörter für Anhänge genannt sind aber kein Anhang ausgewählt ist"
-    },
-    "code": [
-        { "type": "Install", "version": 0 },
-        { "type": "Upgrade", "version": 0 }
-    ]
+    }
 }
