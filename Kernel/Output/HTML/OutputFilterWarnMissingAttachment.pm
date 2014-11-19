@@ -1,6 +1,6 @@
 # --
 # Kernel/Output/HTML/OutputFilterWarnMissingAttachment.pm
-# Copyright (C) 2013 Perl-Services.de, http://www.perl-services.de/
+# Copyright (C) 2013 - 2014 Perl-Services.de, http://www.perl-services.de/
 # --
 # This software comes with ABSOLUTELY NO WARRANTY. For details, see
 # the enclosed file COPYING for license information (AGPL). If you
@@ -16,6 +16,11 @@ use List::Util qw(first);
 
 our $VERSION = 0.01;
 
+our @ObjectDependencies = qw(
+    Kernel::Config
+    Kernel::Output::HTML::Layout
+);
+
 sub new {
     my ( $Type, %Param ) = @_;
 
@@ -23,36 +28,31 @@ sub new {
     my $Self = {};
     bless( $Self, $Type );
 
-    # get needed objects
-    for my $Object (
-        qw(MainObject ConfigObject LogObject LayoutObject ParamObject)
-        )
-    {
-        $Self->{$Object} = $Param{$Object} || die "Got no $Object!";
-    }
-
     return $Self;
 }
 
 sub Run {
     my ( $Self, %Param ) = @_;
 
+    my $ConfigObject = $Kernel::OM->Get('Kernel::Config');
+    my $LayoutObject = $Kernel::OM->Get('Kernel::Output::HTML::Layout');
+
     # get template name
     my $Templatename = $Param{TemplateFile} || '';
     return 1 if !$Templatename;
     return 1 if !first{ $Templatename eq $_ }keys %{$Param{Templates} || {}};
 
-    for my $Keyword ( @{ $Self->{ConfigObject}->Get('WarnMissingAttachment::Keywords') || [] } ) {
-        $Self->{LayoutObject}->Block(
+    for my $Keyword ( @{ $ConfigObject->Get('WarnMissingAttachment::Keywords') || [] } ) {
+        $LayoutObject->Block(
             Name => 'Keyword',
             Data => { Value => $Keyword },
         );
     }
 
-    my %BodyFieldNames = %{ $Self->{ConfigObject}->Get('WarnMissingAttachment::BodyField') || {} };
+    my %BodyFieldNames = %{ $ConfigObject->Get('WarnMissingAttachment::BodyField') || {} };
     my $Fieldname      = $BodyFieldNames{$Templatename};
 
-    my $Snippet = $Self->{LayoutObject}->Output(
+    my $Snippet = $LayoutObject->Output(
         TemplateFile => 'WarnMissingAttachmentJS',
         Data         => {
             Fieldname => $Fieldname,
