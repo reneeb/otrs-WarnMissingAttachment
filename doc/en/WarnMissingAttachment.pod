@@ -12,6 +12,10 @@ When those keywords are found but no attachments are uploaded, the user gets a w
 
 This add on affects AgentTicketPhone, AgentTicketEmail and AgentTicketCompose.
 
+=head1 REPOSITORY & BUGS
+
+The code and the bugtracker can be found at L<http://github.com/reneeb/WarnMissingAttachment>
+
 =head1 AUTHOR
 
 Renee Baecker, C<info@perl-services.de>
