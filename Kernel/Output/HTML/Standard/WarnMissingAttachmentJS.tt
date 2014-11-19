@@ -1,4 +1,4 @@
-<!--dtl:js_on_document_complete-->
+[% WRAPPER JSOnDocumentComplete %]
 <script type="text/javascript">//<![CDATA[
 "use strict";
 
@@ -11,14 +11,14 @@ $(document).ready( function(){
             // warn user that no attachment is given and ask what to do
             Core.UI.Dialog.ShowDialog({
                 "Modal"         : true,
-                "Title"         : "$JSText{"Sending without Attachment"}",
-                "HTML"          : "$JSText{"You probably forgot to attach something to that message. Send without an attachment?"}",
+                "Title"         : [% Translate("Sending without Attachment") | JSON %],
+                "HTML"          : [% Translate("You probably forgot to attach something to that message. Send without an attachment?") | JSON %],
                 "PositionLeft"  : "Center",
                 "PositionTop"   : "100px",
                 "CloseOnEscape" : true,
                 "Buttons"       : [
                     {
-                        "Label"    : "$JSText{"Send without an attachment"}",
+                        "Label"    : [% Translate("Send without an attachment") | JSON %],
                         "Function" : function(){
                             Core.UI.Dialog.CloseDialog( $('.Dialog:visible') );
                             $('form[name="compose"]').submit();
@@ -26,7 +26,7 @@ $(document).ready( function(){
                         }
                     },
                     {
-                        "Label"    : "$JSText{"I want to attach something"}",
+                        "Label"    : [% Translate("I want to attach something") | JSON %],
                         "Function" : function() {
                             Core.UI.Dialog.CloseDialog( $('.Dialog:visible') );
                             return false;
@@ -43,15 +43,15 @@ $(document).ready( function(){
 });
 
 var attachment_keywords = new Array (
-<!-- dtl:block:Keyword -->
-    "$QData{"Value"}",
-<!-- dtl:block:Keyword -->
+[% RenderBlockStart("Keyword") %]
+    "[% Data.Value | html %]",
+[% RenderBlockEnd("Keyword") %]
     ""
 );
 
 
 function check_body() {
-    var body_text = $('textarea[name="$QData{"Fieldname"}"]').val();
+    var body_text = $('textarea[name="[% Data.Fieldname | html %]"]').val();
     for ( var i = 0; i < attachment_keywords.length - 1; i++ ) {
         var re = new RegExp("\\b" + attachment_keywords[i] + "\\b", "i");
         if ( body_text.match(re) ) {
@@ -71,4 +71,4 @@ function check_no_attachment() {
 }
 
 //]]></script>
-<!--dtl:js_on_document_complete-->
+[% END %]
