@@ -57,9 +57,13 @@ sub Run {
         },
     ); 
 
-    ${ $Param{Data} } =~ s{\z}{$Snippet}xsm;
+    my ($JSComplete, $JS) = split /__##__/, $Snippet;
 
-    return ${ $Param{Data} };
+    ${ $Param{Data} } =~ s{\z}{$JS}xsm;
+
+    $LayoutObject->AddJSOnDocumentComplete( Code => $JSComplete );
+
+    return 1;
 }
 
 1;
