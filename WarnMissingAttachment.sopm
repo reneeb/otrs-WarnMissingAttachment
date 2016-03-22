@@ -13,7 +13,7 @@
         <File Permission="644" Location="Kernel/Config/Files/WarnMissingAttachment.xml" />
         <File Permission="644" Location="Kernel/Language/de_WarnMissingAttachment.pm" />
         <File Permission="644" Location="Kernel/Output/HTML/FilterElementPost/WarnMissingAttachment.pm" />
-        <File Permission="644" Location="Kernel/Output/HTML/Standard/WarnMissingAttachmentJS.tt" />
+        <File Permission="644" Location="Kernel/Output/HTML/Templates/Standard/WarnMissingAttachmentJS.tt" />
         <File Permission="644" Location="doc/WarnMissingAttachment.json" />
         <File Permission="644" Location="doc/en/WarnMissingAttachment.pod" />
     </Filelist>
