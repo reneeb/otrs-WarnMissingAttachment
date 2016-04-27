@@ -51,6 +51,14 @@ function check_body() {
 
     var body_text = $('textarea[name="[% Data.Fieldname | html %]"]').val();
 
+    if ( typeof CKEDITOR !== 'undefined' ) {
+        var ta_id = $('textarea[name="[% Data.Fieldname | html %]"]').prop('id');
+
+        if ( CKEDITOR && CKEDITOR.instances[ta_id] ) {
+            body_text = CKEDITOR.instances[ta_id].getData();
+        }
+    }
+
     for ( var i = 0; i < attachment_keywords.length - 1; i++ ) {
         var re = new RegExp("\\b" + attachment_keywords[i] + "\\b", "i");
         if ( body_text.match(re) ) {
