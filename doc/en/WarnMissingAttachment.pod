@@ -1,6 +1,8 @@
+=encoding utf-8
+
 =head1 NAME
 
-WarnMissingAttachment
+WarnMissingAttachment - Warn user when attachment keywords are mentioned but no attachment was added.
 
 =head1 DESCRIPTION
 
@@ -12,11 +14,22 @@ When those keywords are found but no attachments are uploaded, the user gets a w
 
 This add on affects AgentTicketPhone, AgentTicketEmail and AgentTicketCompose.
 
-=head1 REPOSITORY & BUGS
+=head1 REPOSITORY AND BUGTRACKER
 
-The code and the bugtracker can be found at L<http://github.com/reneeb/WarnMissingAttachment>
+The code and the bugtracker can be found at L<https://github.com/reneeb/otrs-WarnMissingAttachment>
 
-=head1 AUTHOR
+=head1 CONTRIBUTORS
 
-Renee Baecker, C<info@perl-services.de>
+Balázs Úr, OTRS-megoldások (L<http://www.otrs-megoldasok.hu>)
+
+ * Hungarian translation
+
+=head1 AUTHOR AND LICENSE
+
+Copyright (C) 2016 Renée Bäcker, L<http://perl-services.de>
+
+This software comes with ABSOLUTELY NO WARRANTY. 
+For details, see the enclosed file COPYING for 
+license information (AGPL). If you did not receive 
+this file, see L<http://www.gnu.org/licenses/agpl.txt>.
 
