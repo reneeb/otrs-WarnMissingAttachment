@@ -26,7 +26,9 @@ sub Data {
     # Kernel/Config/Files/WarnMissingAttachment.xml
     $Lang->{'List of screens that are affected by this modul.'} = '';
     $Lang->{'Names of Body fields.'} = '';
-    $Lang->{'Keywords that indicates that an attachment should be sent.'} = '';
+    $Lang->{'German keywords that indicates that an attachment should be sent.'} = '';
+    $Lang->{'English keywords that indicates that an attachment should be sent.'} = '';
+    $Lang->{'Hungarian keywords that indicates that an attachment should be sent.'} = '';
 
     # Kernel/Output/HTML/Templates/Standard/WarnMissingAttachmentJS.tt
     $Lang->{'Sending without Attachment'} = 'Absenden ohne Anhang';

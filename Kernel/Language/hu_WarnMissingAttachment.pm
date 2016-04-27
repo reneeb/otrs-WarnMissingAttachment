@@ -27,8 +27,12 @@ sub Data {
     # Kernel/Config/Files/WarnMissingAttachment.xml
     $Lang->{'List of screens that are affected by this modul.'} = 'Képernyők listája, amelyeket ez a modul érint.';
     $Lang->{'Names of Body fields.'} = 'A törzsmezők nevei.';
-    $Lang->{'Keywords that indicates that an attachment should be sent.'} =
-        'Kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'German keywords that indicates that an attachment should be sent.'} =
+        'Német kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'English keywords that indicates that an attachment should be sent.'} =
+        'Angol kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Hungarian keywords that indicates that an attachment should be sent.'} =
+        'Magyar kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
 
     # Kernel/Output/HTML/Templates/Standard/WarnMissingAttachmentJS.tt
     $Lang->{'Sending without Attachment'} = 'Küldés melléklet nélkül';

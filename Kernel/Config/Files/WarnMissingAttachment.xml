@@ -30,14 +30,98 @@
             </Hash>
         </Setting>
     </ConfigItem>
-   <ConfigItem Name="WarnMissingAttachment::Keywords" Required="1" Valid="1">
-        <Description Translatable="1">Keywords that indicates that an attachment should be sent.</Description>
+    <ConfigItem Name="WarnMissingAttachment::Keywords###de" Required="1" Valid="1">
+        <Description Translatable="1">German keywords that indicates that an attachment should be sent.</Description>
+        <Group>WarnMissingAttachment</Group>
+        <SubGroup>Core::WarnMissingAttachment</SubGroup>
+        <Setting>
+            <Array>
+                <Item></Item>
+            </Array>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="WarnMissingAttachment::Keywords###en" Required="1" Valid="1">
+        <Description Translatable="1">English keywords that indicates that an attachment should be sent.</Description>
         <Group>WarnMissingAttachment</Group>
         <SubGroup>Core::WarnMissingAttachment</SubGroup>
         <Setting>
             <Array>
                 <Item>attach</Item>
-                <Item>Attachment</Item>
+                <Item>attaching</Item>
+                <Item>attaches</Item>
+                <Item>attachment</Item>
+                <Item>attachments</Item>
+                <Item>attached</Item>
+                <Item>document</Item>
+                <Item>documents</Item>
+                <Item>enclose</Item>
+                <Item>enclosed</Item>
+                <Item>enclosing</Item>
+                <Item>encloses</Item>
+                <Item>enclosure</Item>
+                <Item>enclosures</Item>
+                <Item>file</Item>
+                <Item>files</Item>
+                <Item>letter</Item>
+            </Array>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="WarnMissingAttachment::Keywords###hu" Required="1" Valid="1">
+        <Description Translatable="1">Hungarian keywords that indicates that an attachment should be sent.</Description>
+        <Group>WarnMissingAttachment</Group>
+        <SubGroup>Core::WarnMissingAttachment</SubGroup>
+        <Setting>
+            <Array>
+                <Item>állomány</Item>
+                <Item>állományt</Item>
+                <Item>állománynak</Item>
+                <Item>állományok</Item>
+                <Item>állományokat</Item>
+                <Item>állományoknak</Item>
+                <Item>csatol</Item>
+                <Item>csatolás</Item>
+                <Item>csatolást</Item>
+                <Item>csatolásnak</Item>
+                <Item>csatolások</Item>
+                <Item>csatolásokat</Item>
+                <Item>csatolásoknak</Item>
+                <Item>csatolmány</Item>
+                <Item>csatolmányt</Item>
+                <Item>csatolmánynak</Item>
+                <Item>csatolmányok</Item>
+                <Item>csatolmányokat</Item>
+                <Item>csatolmányoknak</Item>
+                <Item>csatolva</Item>
+                <Item>csatolom</Item>
+                <Item>csatoltam</Item>
+                <Item>dokumentum</Item>
+                <Item>dokumentumot</Item>
+                <Item>dokumentumnak</Item>
+                <Item>dokumentumok</Item>
+                <Item>dokumentumokat</Item>
+                <Item>dokumentumoknak</Item>
+                <Item>fájl</Item>
+                <Item>fájlt</Item>
+                <Item>fájlnak</Item>
+                <Item>fájlok</Item>
+                <Item>fájlokat</Item>
+                <Item>fájloknak</Item>
+                <Item>mellékel</Item>
+                <Item>mellékelem</Item>
+                <Item>mellékelve</Item>
+                <Item>mellékeltem</Item>
+                <Item>melléklet</Item>
+                <Item>mellékletet</Item>
+                <Item>mellékletnek</Item>
+                <Item>mellékletek</Item>
+                <Item>mellékleteket</Item>
+                <Item>mellékleteknek</Item>
+                <Item>küldöm</Item>
+                <Item>elküldöm</Item>
+                <Item>átküldöm</Item>
+                <Item>küldött</Item>
+                <Item>elküldött</Item>
+                <Item>átküldött</Item>
             </Array>
         </Setting>
     </ConfigItem>
