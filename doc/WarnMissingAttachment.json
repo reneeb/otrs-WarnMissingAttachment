@@ -1,6 +1,6 @@
 {
     "name": "WarnMissingAttachment",
-    "version": "5.0.1",
+    "version": "5.0.2",
     "framework": [
         "5.0.x"
     ],
@@ -10,7 +10,8 @@
     },
     "license": "GNU AFFERO GENERAL PUBLIC LICENSE Version 3, November 2007",
     "description" : {
-        "en": "Warn user when attachment keywords are mentioned but no attachment was added",
-        "de": "Warne den Benutzer wenn Schlüsselwörter für Anhänge genannt sind aber kein Anhang ausgewählt ist"
+        "en": "Warn user when attachment keywords are mentioned but no attachment was added.",
+        "de": "Warne den Benutzer wenn Schlüsselwörter für Anhänge genannt sind aber kein Anhang ausgewählt ist.",
+        "hu": "A felhasználó figyelmeztetése, amikor melléklet kulcsszavakat említett, de nem adott hozzá mellékletet."
     }
 }

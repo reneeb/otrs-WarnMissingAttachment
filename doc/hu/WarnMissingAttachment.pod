@@ -1,0 +1,44 @@
+=encoding utf-8
+
+=head1 NÉV
+
+WarnMissingAttachment - A felhasználó figyelmeztetése, amikor melléklet 
+kulcsszavakat említett, de nem adott hozzá mellékletet.
+
+=head1 LEÍRÁS
+
+Nem olyan szokatlan, hogy valami olyasmit írunk a levélbe, hogy „Csatolva a
+fájl új verziója”, de aztán elfelejtjük csatolni a fájlt a levél küldése előtt.
+Ez a bővítmény ellenőriz néhány kulcsszót a levélben az üzenet elküldése előtt,
+mint például „csatolva”, „melléklet”, stb.
+
+Amikor a megadott kulcsszavak megtalálhatók, de nem lett melléklet feltöltve,
+akkor a felhasználó figyelmeztetést fog kapni.
+
+Ez a bővítmény az AgentTicketPhone, AgentTicketEmail és AgentTicketCompose
+képernyőket érinti.
+
+=head1 TÁROLÓ ÉS HIBAKÖVETŐ
+
+A kód és a hibakövető a L<https://github.com/reneeb/otrs-WarnMissingAttachment>
+címen található.
+
+=head1 HOZZÁJÁRULÓK
+
+Úr Balázs, OTRS-megoldások (L<http://www.otrs-megoldasok.hu>)
+
+ * Magyar fordítás
+
+=head1 SZERZŐ ÉS LICENC
+
+Copyright (C) 2016 Renée Bäcker, L<http://perl-services.de>
+
+Ez a szoftver MINDENFÉLE GARANCIA NÉLKÜL érkezik. A részletekért és a
+licencinformációkért (AGPL) nézze meg a mellékelt COPYING fájlt. Ha nem kapta
+meg a fájlt, akkor olvassa el a L<http://www.gnu.org/licenses/agpl.txt> címen.
+
+=head1 MAGYAR FORDÍTÁS
+
+A magyar fordítást az OTRS-megoldások csapata készítette.
+Copyright (C) 2016 Úr Balázs, L<http://otrs-megoldasok.hu>
+
