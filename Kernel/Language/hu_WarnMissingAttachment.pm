@@ -31,12 +31,54 @@ sub Data {
         'Annak meghatározása, hogy a kulcsszólista hogyan legyen beépítve - csak az ügyintézők nyelvén, vagy az ügyintézők nyelvén és angolul is.';
     $Lang->{'Keywords that indicates that an attachment should be sent. It\'s a fallback when no localization for the agents\' language can be found.'} =
         'Kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni. Ez egy tartalék beállítás, ha nem található honosítás az ügyintézők nyelvéhez.';
+    $Lang->{'Czech keywords that indicates that an attachment should be sent.'} =
+        'Cseh kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
     $Lang->{'German keywords that indicates that an attachment should be sent.'} =
         'Német kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Greek keywords that indicates that an attachment should be sent.'} =
+        'Görög kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
     $Lang->{'English keywords that indicates that an attachment should be sent.'} =
         'Angol kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Spanish keywords that indicates that an attachment should be sent.'} =
+        'Spanyol kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Finnish keywords that indicates that an attachment should be sent.'} =
+        'Finn kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'French keywords that indicates that an attachment should be sent.'} =
+        'Francia kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Hebrew keywords that indicates that an attachment should be sent.'} =
+        'Héber kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
     $Lang->{'Hungarian keywords that indicates that an attachment should be sent.'} =
         'Magyar kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Indonesian keywords that indicates that an attachment should be sent.'} =
+        'Indonéz kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Italian keywords that indicates that an attachment should be sent.'} =
+        'Olasz kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Kazakh keywords that indicates that an attachment should be sent.'} =
+        'Kazak kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Lithuanian keywords that indicates that an attachment should be sent.'} =
+        'Litván kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Norwegian Bokmål keywords that indicates that an attachment should be sent.'} =
+        'Norvég bokmål kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Occitan keywords that indicates that an attachment should be sent.'} =
+        'Okcitán kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Polish keywords that indicates that an attachment should be sent.'} =
+        'Lengyel kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Portuguese keywords that indicates that an attachment should be sent.'} =
+        'Portugál kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Brazilian Portuguese keywords that indicates that an attachment should be sent.'} =
+        'Brazíliai portugál kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Russian keywords that indicates that an attachment should be sent.'} =
+        'Orosz kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Slovak keywords that indicates that an attachment should be sent.'} =
+        'Szlovák kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Serbian keywords that indicates that an attachment should be sent.'} =
+        'Szerb kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Swedish keywords that indicates that an attachment should be sent.'} =
+        'Swéd kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Turkish keywords that indicates that an attachment should be sent.'} =
+        'Török kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'Mandarin keywords that indicates that an attachment should be sent.'} =
+        'Mandarin kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
 
     # Kernel/Output/HTML/Templates/Standard/WarnMissingAttachmentJS.tt
     $Lang->{'Sending without Attachment'} = 'Küldés melléklet nélkül';
