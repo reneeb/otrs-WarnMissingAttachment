@@ -15,8 +15,6 @@ use warnings;
 
 use utf8;
 
-our $VERSION = '0.01';
-
 sub Data {
     my $Self = shift;
 
@@ -25,7 +23,7 @@ sub Data {
     return if ref $Lang ne 'HASH';
 
     # Kernel/Config/Files/WarnMissingAttachment.xml
-    $Lang->{'List of screens that are affected by this modul.'} = 'Képernyők listája, amelyeket ez a modul érint.';
+    $Lang->{'List of screens that are affected by this module.'} = 'Képernyők listája, amelyeket ez a modul érint.';
     $Lang->{'Names of Body fields.'} = 'A törzsmezők nevei.';
     $Lang->{'German keywords that indicates that an attachment should be sent.'} =
         'Német kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
@@ -33,6 +31,13 @@ sub Data {
         'Angol kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
     $Lang->{'Hungarian keywords that indicates that an attachment should be sent.'} =
         'Magyar kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
+    $Lang->{'localized'} = '';
+    $Lang->{'localized + english'} = '';
+    $Lang->{'Define how the keywordlist is built - either only agents\' language or both user language and english'} =
+        '';
+    $Lang->{'Keywords that indicates that an attachment should be sent. It\'s a fallback when no localization for the agents\' language can be found.'} =
+        '';
+
 
     # Kernel/Output/HTML/Templates/Standard/WarnMissingAttachmentJS.tt
     $Lang->{'Sending without Attachment'} = 'Küldés melléklet nélkül';

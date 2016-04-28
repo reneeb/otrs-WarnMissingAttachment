@@ -30,20 +30,47 @@
             </Hash>
         </Setting>
     </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::Keywords###de" Required="1" Valid="1">
-        <Description Translatable="1">German keywords that indicates that an attachment should be sent.</Description>
+   <ConfigItem Name="WarnMissingAttachment::Keywordlist" Required="1" Valid="1">
+        <Description Translatable="1">Define how the keywordlist is built - either only agents' language or both user language and english.</Description>
         <Group>WarnMissingAttachment</Group>
         <SubGroup>Core::WarnMissingAttachment</SubGroup>
         <Setting>
+            <Option SelectedID="localized">
+                <Item Key="localized">localized</Item>
+                <Item Key="international" Translatable="1">localized + english</Item>
+            </Option>
+        </Setting>
+    </ConfigItem>
+   <ConfigItem Name="WarnMissingAttachment::Keywords" Required="1" Valid="1">
+        <Description Translatable="1">Keywords that indicates that an attachment should be sent. It's a fallback when no localization for the agents' language can be found.</Description>
+        <Group>WarnMissingAttachment</Group>
+        <SubGroup>Core::Keywords</SubGroup>
+        <Setting>
             <Array>
-                <Item></Item>
+                <Item>attach</Item>
+                <Item>Attachment</Item>
+                <Item>attached</Item>
             </Array>
         </Setting>
     </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::Keywords###en" Required="1" Valid="1">
+    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###de" Required="1" Valid="1">
+        <Description Translatable="1">German keywords that indicates that an attachment should be sent.</Description>
+        <Group>WarnMissingAttachment</Group>
+        <SubGroup>Core::Keywords</SubGroup>
+        <Setting>
+            <Array>
+                <Item>anbei</Item>
+                <Item>angehängt</Item>
+                <Item>Anhang</Item>
+                <Item>anzuhängen</Item>
+                <Item>anhängen</Item>
+            </Array>
+        </Setting>
+    </ConfigItem>
+    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###en" Required="1" Valid="1">
         <Description Translatable="1">English keywords that indicates that an attachment should be sent.</Description>
         <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::WarnMissingAttachment</SubGroup>
+        <SubGroup>Core::Keywords</SubGroup>
         <Setting>
             <Array>
                 <Item>attach</Item>
@@ -66,10 +93,10 @@
             </Array>
         </Setting>
     </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::Keywords###hu" Required="1" Valid="1">
+    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###hu" Required="1" Valid="1">
         <Description Translatable="1">Hungarian keywords that indicates that an attachment should be sent.</Description>
         <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::WarnMissingAttachment</SubGroup>
+        <SubGroup>Core::Keywords</SubGroup>
         <Setting>
             <Array>
                 <Item>állomány</Item>

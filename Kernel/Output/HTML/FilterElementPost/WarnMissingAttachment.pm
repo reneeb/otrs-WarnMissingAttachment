@@ -40,7 +40,23 @@ sub Run {
     return 1 if !$Templatename;
     return 1 if !first{ $Templatename eq $_ }keys %{$Param{Templates} || {}};
 
-    for my $Keyword ( @{ $ConfigObject->Get('WarnMissingAttachment::Keywords') || [] } ) {
+    my $LocalizedKeywords = $ConfigObject->Get('WarnMissingAttachment::LocalizedKeywords') || {};
+    my @Keywords;
+
+    my $UserLanguage = $LayoutObject->{LanguageObject}->{UserLanguage};
+    if ( $LocalizedKeywords->{$UserLanguage} ) {
+        push @Keywords, @{ $LocalizedKeywords->{$UserLanguage} || [] };
+    }
+    
+    if ( $ConfigObject->Get('WarnMissingAttachment::Keywordlist') eq 'international' && $UserLanguage ne 'en' ) {
+        push @Keywords, @{ $LocalizedKeywords->{en} || [] };
+    }
+
+    if ( !$LocalizedKeywords->{$UserLanguage} ) {
+        push @Keywords, @{ $ConfigObject->Get('WarnMissingAttachment::Keywords') || [] };
+    }
+
+    for my $Keyword ( @Keywords ) {
         $LayoutObject->Block(
             Name => 'Keyword',
             Data => { Value => $Keyword },
