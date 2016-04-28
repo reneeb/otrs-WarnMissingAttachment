@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <otrs_config version="1.0" init="Config">
     <ConfigItem Name="Frontend::Output::FilterElementPost###OutputFilterWarnMissingAttachment" Required="0" Valid="1">
-        <Description Translatable="1">List of screens that are affected by this modul.</Description>
+        <Description Translatable="1">List of screens that are affected by this module.</Description>
         <Group>WarnMissingAttachment</Group>
         <SubGroup>OutputFilter</SubGroup>
         <Setting>
@@ -31,12 +31,12 @@
         </Setting>
     </ConfigItem>
    <ConfigItem Name="WarnMissingAttachment::Keywordlist" Required="1" Valid="1">
-        <Description Translatable="1">Define how the keywordlist is built - either only agents' language or both user language and english.</Description>
+        <Description Translatable="1">Define how the keyword list is built - either only agents' language or both user language and english.</Description>
         <Group>WarnMissingAttachment</Group>
         <SubGroup>Core::WarnMissingAttachment</SubGroup>
         <Setting>
             <Option SelectedID="localized">
-                <Item Key="localized">localized</Item>
+                <Item Key="localized" Translatable="1">localized</Item>
                 <Item Key="international" Translatable="1">localized + english</Item>
             </Option>
         </Setting>
@@ -119,6 +119,7 @@
                 <Item>csatolmányokat</Item>
                 <Item>csatolmányoknak</Item>
                 <Item>csatolva</Item>
+                <Item>csatolok</Item>
                 <Item>csatolom</Item>
                 <Item>csatoltam</Item>
                 <Item>dokumentum</Item>
@@ -134,6 +135,7 @@
                 <Item>fájlokat</Item>
                 <Item>fájloknak</Item>
                 <Item>mellékel</Item>
+                <Item>mellékelek</Item>
                 <Item>mellékelem</Item>
                 <Item>mellékelve</Item>
                 <Item>mellékeltem</Item>
@@ -143,6 +145,9 @@
                 <Item>mellékletek</Item>
                 <Item>mellékleteket</Item>
                 <Item>mellékleteknek</Item>
+                <Item>küldök</Item>
+                <Item>elküldök</Item>
+                <Item>átküldök</Item>
                 <Item>küldöm</Item>
                 <Item>elküldöm</Item>
                 <Item>átküldöm</Item>

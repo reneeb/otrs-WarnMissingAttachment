@@ -25,19 +25,18 @@ sub Data {
     # Kernel/Config/Files/WarnMissingAttachment.xml
     $Lang->{'List of screens that are affected by this module.'} = 'Képernyők listája, amelyeket ez a modul érint.';
     $Lang->{'Names of Body fields.'} = 'A törzsmezők nevei.';
+    $Lang->{'localized'} = 'honosított';
+    $Lang->{'localized + english'} = 'honosított + angol';
+    $Lang->{'Define how the keyword list is built - either only agents\' language or both user language and english.'} =
+        'Annak meghatározása, hogy a kulcsszólista hogyan legyen beépítve - csak az ügyintézők nyelvén, vagy az ügyintézők nyelvén és angolul is.';
+    $Lang->{'Keywords that indicates that an attachment should be sent. It\'s a fallback when no localization for the agents\' language can be found.'} =
+        'Kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni. Ez egy tartalék beállítás, ha nem található honosítás az ügyintézők nyelvéhez.';
     $Lang->{'German keywords that indicates that an attachment should be sent.'} =
         'Német kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
     $Lang->{'English keywords that indicates that an attachment should be sent.'} =
         'Angol kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
     $Lang->{'Hungarian keywords that indicates that an attachment should be sent.'} =
         'Magyar kulcsszavak, amelyek azt jelzik, hogy mellékletet kellene küldeni.';
-    $Lang->{'localized'} = '';
-    $Lang->{'localized + english'} = '';
-    $Lang->{'Define how the keywordlist is built - either only agents\' language or both user language and english'} =
-        '';
-    $Lang->{'Keywords that indicates that an attachment should be sent. It\'s a fallback when no localization for the agents\' language can be found.'} =
-        '';
-
 
     # Kernel/Output/HTML/Templates/Standard/WarnMissingAttachmentJS.tt
     $Lang->{'Sending without Attachment'} = 'Küldés melléklet nélkül';

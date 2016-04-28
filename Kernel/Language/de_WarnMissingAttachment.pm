@@ -26,10 +26,10 @@ sub Data {
     $Lang->{'Names of Body fields.'} = 'Namen der Textfelder';
     $Lang->{'localized'} = 'Lokalisiert';
     $Lang->{'localized + english'} = 'Lokalisiert plus Englisch';
-    $Lang->{'Define how the keywordlist is built - either only agents\' language or both user language and english'} =
-        'Definiert wie die Liste der Schlüsselwörter gebildet wird - entweder nur die Sprache des Agenten oder sowohl die Sprache des Benutzers und Englisch';
+    $Lang->{'Define how the keyword list is built - either only agents\' language or both user language and english.'} =
+        'Definiert wie die Liste der Schlüsselwörter gebildet wird - entweder nur die Sprache des Agenten oder sowohl die Sprache des Benutzers und Englisch.';
     $Lang->{'Keywords that indicates that an attachment should be sent. It\'s a fallback when no localization for the agents\' language can be found.'} =
-        'Schlüsselwörter die darauf hinweisen dass ein Anhang gesendet werden soll. Als Fallback wenn keine Lokalisierung für die Sprache des Agenten gefunden wird,';
+        'Schlüsselwörter die darauf hinweisen dass ein Anhang gesendet werden soll. Als Fallback wenn keine Lokalisierung für die Sprache des Agenten gefunden wird.';
     $Lang->{'German keywords that indicates that an attachment should be sent.'} = 
         'Deutsche Schlüsselwörter die darauf hinweisen dass ein Anhang gesendet werden soll.';
     $Lang->{'English keywords that indicates that an attachment should be sent.'} = 
