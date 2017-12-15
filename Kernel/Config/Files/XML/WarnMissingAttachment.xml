@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<otrs_config version="1.0" init="Config">
-    <ConfigItem Name="Frontend::Output::FilterElementPost###OutputFilterWarnMissingAttachment" Required="0" Valid="1">
+<otrs_config version="2.0" init="Config">
+    <Setting Name="Frontend::Output::FilterElementPost###OutputFilterWarnMissingAttachment" Required="0" Valid="1">
         <Description Translatable="1">List of screens that are affected by this module.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>OutputFilter</SubGroup>
-        <Setting>
+        <Navigation>Frontend::Base::OutputFilter</Navigation>
+        <Value>
             <Hash>
                 <Item Key="Module">Kernel::Output::HTML::FilterElementPost::WarnMissingAttachment</Item>
                 <Item Key="Debug">0</Item>
@@ -12,52 +11,54 @@
                     <Hash>
                         <Item Key="AgentTicketPhone">1</Item>
                         <Item Key="AgentTicketEmail">1</Item>
+                        <Item Key="AgentTicketBounce">1</Item>
+                        <Item Key="AgentTicketForward">1</Item>
+                        <Item Key="AgentTicketEmailOuutbound">1</Item>
                         <Item Key="AgentTicketCompose">1</Item>
                     </Hash>
                 </Item>
             </Hash>
-        </Setting>
-    </ConfigItem>
-   <ConfigItem Name="WarnMissingAttachment::BodyField" Required="1" Valid="1">
+        </Value>
+    </Setting>
+   <Setting Name="WarnMissingAttachment::BodyField" Required="1" Valid="1">
         <Description Translatable="1">Names of Body fields.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::WarnMissingAttachment</SubGroup>
-        <Setting>
+        <Navigation>Core::WarnMissingAttachment</Navigation>
+        <Value>
             <Hash>
                 <Item Key="AgentTicketPhone">Body</Item>
                 <Item Key="AgentTicketEmail">Body</Item>
                 <Item Key="AgentTicketCompose">Body</Item>
+                <Item Key="AgentTicketEmailOutbound">Body</Item>
+                <Item Key="AgentTicketBounce">Body</Item>
+                <Item Key="AgentTicketForward">Body</Item>
             </Hash>
-        </Setting>
-    </ConfigItem>
-   <ConfigItem Name="WarnMissingAttachment::Keywordlist" Required="1" Valid="1">
+        </Value>
+    </Setting>
+   <Setting Name="WarnMissingAttachment::Keywordlist" Required="1" Valid="1">
         <Description Translatable="1">Define how the keyword list is built - either only agents' language or both user language and english.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::WarnMissingAttachment</SubGroup>
-        <Setting>
-            <Option SelectedID="localized">
-                <Item Key="localized" Translatable="1">localized</Item>
-                <Item Key="international" Translatable="1">localized + english</Item>
-            </Option>
-        </Setting>
-    </ConfigItem>
-   <ConfigItem Name="WarnMissingAttachment::Keywords" Required="1" Valid="1">
+        <Navigation>Core::WarnMissingAttachment</Navigation>
+        <Value>
+            <Item ValueType="Select" SelectedID="localized">
+                <Item ValueType="Option" Value="localized" Translatable="1">localized</Item>
+                <Item ValueType="Option" Value="international" Translatable="1">localized + english</Item>
+            </Item>
+        </Value>
+    </Setting>
+   <Setting Name="WarnMissingAttachment::Keywords" Required="1" Valid="1">
         <Description Translatable="1">Keywords that indicates that an attachment should be sent. It's a fallback when no localization for the agents' language can be found.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>attach</Item>
                 <Item>Attachment</Item>
                 <Item>attached</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###cs" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###cs" Required="1" Valid="1">
         <Description Translatable="1">Czech keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>příloha</Item>
                 <Item>přílohy</Item>
@@ -77,13 +78,12 @@
                 <Item>přiložili</Item>
                 <Item>přiložily</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###de" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###de" Required="1" Valid="1">
         <Description Translatable="1">German keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>anbei</Item>
                 <Item>anhängend</Item>
@@ -98,25 +98,23 @@
                 <Item>Beilage</Item>
                 <Item>Wiedervorlage</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###el" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###el" Required="1" Valid="1">
         <Description Translatable="1">Greek keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>επισύναψη</Item>
                 <Item>συνημμένο</Item>
                 <Item>συνημμένα</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###en" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###en" Required="1" Valid="1">
         <Description Translatable="1">English keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>attach</Item>
                 <Item>attaching</Item>
@@ -136,13 +134,12 @@
                 <Item>files</Item>
                 <Item>letter</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###es" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###es" Required="1" Valid="1">
         <Description Translatable="1">Spanish keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>adjuntar</Item>
                 <Item>adjuntando</Item>
@@ -156,13 +153,12 @@
                 <Item>adjunto</Item>
                 <Item>adjuntos</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###fi" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###fi" Required="1" Valid="1">
         <Description Translatable="1">Finnish keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>liite</Item>
                 <Item>liitetiedosto</Item>
@@ -170,13 +166,12 @@
                 <Item>liitetiedostot</Item>
                 <Item>liitän</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###fr" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###fr" Required="1" Valid="1">
         <Description Translatable="1">French keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>pièce-jointe</Item>
                 <Item>joint</Item>
@@ -186,13 +181,12 @@
                 <Item>attachement</Item>
                 <Item>fichier-joint</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###he" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###he" Required="1" Valid="1">
         <Description Translatable="1">Hebrew keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>לצרף</Item>
                 <Item>צירוף</Item>
@@ -202,13 +196,12 @@
                 <Item>צורף</Item>
                 <Item>נספח</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###hu" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###hu" Required="1" Valid="1">
         <Description Translatable="1">Hungarian keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>állomány</Item>
                 <Item>állományt</Item>
@@ -266,26 +259,24 @@
                 <Item>elküldött</Item>
                 <Item>átküldött</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###id" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###id" Required="1" Valid="1">
         <Description Translatable="1">Indonesian keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>lampiran</Item>
                 <Item>melampirkan</Item>
                 <Item>dilampirkan</Item>
                 <Item>terlampir</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###it" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###it" Required="1" Valid="1">
         <Description Translatable="1">Italian keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>allegato</Item>
                 <Item>allegati</Item>
@@ -295,13 +286,12 @@
                 <Item>allegando</Item>
                 <Item>includo</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###kk" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###kk" Required="1" Valid="1">
         <Description Translatable="1">Kazakh keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>салыным</Item>
                 <Item>салынымды</Item>
@@ -310,13 +300,12 @@
                 <Item>салынған</Item>
                 <Item>қосып</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###lt" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###lt" Required="1" Valid="1">
         <Description Translatable="1">Lithuanian keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>prisegtas</Item>
                 <Item>prisegta</Item>
@@ -339,23 +328,21 @@
                 <Item>priedas</Item>
                 <Item>priedai</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###nb" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###nb" Required="1" Valid="1">
         <Description Translatable="1">Norwegian Bokmål keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>vedlegg</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###oc" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###oc" Required="1" Valid="1">
         <Description Translatable="1">Occitan keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>pèça-junta</Item>
                 <Item>junt</Item>
@@ -366,13 +353,12 @@
                 <Item>estacament</Item>
                 <Item>fichièr-junt</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###pl" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###pl" Required="1" Valid="1">
         <Description Translatable="1">Polish keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>załącznik</Item>
                 <Item>załączam</Item>
@@ -391,13 +377,12 @@
                 <Item>dolaczylam</Item>
                 <Item>dolaczono</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###pt" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###pt" Required="1" Valid="1">
         <Description Translatable="1">Portuguese keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>anexar</Item>
                 <Item>anexa</Item>
@@ -410,13 +395,12 @@
                 <Item>inclusão</Item>
                 <Item>inclusões</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###pt_BR" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###pt_BR" Required="1" Valid="1">
         <Description Translatable="1">Brazilian Portuguese keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>anexar</Item>
                 <Item>anexando</Item>
@@ -434,13 +418,12 @@
                 <Item>inseridos</Item>
                 <Item>inseridas</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###ru" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###ru" Required="1" Valid="1">
         <Description Translatable="1">Russian keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>прикрепить</Item>
                 <Item>прикрепление</Item>
@@ -451,13 +434,12 @@
                 <Item>вложенные</Item>
                 <Item>вложения</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###sk" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###sk" Required="1" Valid="1">
         <Description Translatable="1">Slovak keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>príloha</Item>
                 <Item>prílohy</Item>
@@ -476,13 +458,12 @@
                 <Item>prikladaným</Item>
                 <Item>prikladanému</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###sr" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###sr" Required="1" Valid="1">
         <Description Translatable="1">Serbian keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>прилог</Item>
                 <Item>прилогу</Item>
@@ -495,13 +476,12 @@
                 <Item>atačment</Item>
                 <Item>atačmentu</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###sv" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###sv" Required="1" Valid="1">
         <Description Translatable="1">Swedish keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>bifoga</Item>
                 <Item>bifogar</Item>
@@ -514,13 +494,12 @@
                 <Item>skickar med</Item>
                 <Item>medföljande</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###tr" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###tr" Required="1" Valid="1">
         <Description Translatable="1">Turkish keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>ekle</Item>
                 <Item>ekleniyor</Item>
@@ -535,19 +514,17 @@
                 <Item>koruncak</Item>
                 <Item>koruncaklar</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
-    <ConfigItem Name="WarnMissingAttachment::LocalizedKeywords###zh_TW" Required="1" Valid="1">
+        </Value>
+    </Setting>
+    <Setting Name="WarnMissingAttachment::LocalizedKeywords###zh_TW" Required="1" Valid="1">
         <Description Translatable="1">Mandarin keywords that indicates that an attachment should be sent.</Description>
-        <Group>WarnMissingAttachment</Group>
-        <SubGroup>Core::Keywords</SubGroup>
-        <Setting>
+        <Navigation>Core::Keywords</Navigation>
+        <Value>
             <Array>
                 <Item>附件</Item>
                 <Item>附上</Item>
                 <Item>附加</Item>
             </Array>
-        </Setting>
-    </ConfigItem>
+        </Value>
+    </Setting>
 </otrs_config>
-

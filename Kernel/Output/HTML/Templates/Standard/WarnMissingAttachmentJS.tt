@@ -15,7 +15,7 @@ $('button[id="submitRichText"]').bind( 'click', function(e) {
                     "Label"    : [% Translate("Send without an attachment") | JSON %],
                     "Function" : function(){
                         Core.UI.Dialog.CloseDialog( $('.Dialog:visible') );
-                        $('form[name="compose"]').submit();
+                        $('form[name="Compose"]').submit();
                         return true;
                     }
                 },
